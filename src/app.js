@@ -44,7 +44,6 @@ app.get("/main", (req, res) => {
   //   res.send("hello from backend");
   res.render("main");
 });
-
 mongoose
   .connect(
     `mongodb+srv://Rinkal:rinkal1797@cluster0.2cad6.mongodb.net/speechTotext?retryWrites=true&w=majority`,
