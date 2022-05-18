@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Speech to Text-DVT </title>
+  <meta charset="utf-8" />
+</head>
+
+<body style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:13px;">
+  <div style="display: flex;flex-direction: row;justify-content: flex-end;color:white;font-weight: bold;">
+    <a href="/">Log Out</a>
+  </div>
+  <div id="warning">
+    <h3 style="font-weight:500;color:white;text-align: center;">Speech Recognition Speech SDK not found
+      (microsoft.cognitiveservices.speech.sdk.bundle.js missing).</h3>
+  </div>
+
+  <div id="login-page" style="display:none">
+
+    <table width="100%" class="form">
+
+      <tr>
+        <th colspan="5">
+          <h3 style="font-weight:500;align-items: center;">Microsoft Cognitive Services Speech to Text</h3>
+          </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td colspan="5">
+          <div style="display: flex;">
+              <input type="radio" id="mic" name="option" class="radio" value="mic" checked="true">
+              <label for="mic">Microphone</label>
+            <input type="radio" id="file" name="option" class="radio" value="audio">
+              <label for="audio">From audio file</label><br>
+          </div>
+        </td>
+      </tr>
+      <tr id="fileBlock" style="display: none;">
+        <td>File to Recognize</td>
+        <td colspan="5">
+          <input type="file" id="filePicker" accept=".wav" />
+        </td>
+      </tr>
+
+      <tr>
+        <td id="start"><button id="startRecognizeOnceAsyncButton"> <i class="fa fa-microphone"></i>SPEAK</button></td>
+        <td id="stop" style="display: none;"><button id="stopRecognizeOnceAsyncButton" style="color: red;"> <i
+              class="fa fa-stop"></i>
+            STOP</button></td>
+        <td><textarea id="phraseDiv" style="display: inline-block;width:500px;height:200px"
+            placeholder="your speech result will display here"></textarea></td>
+      </tr>
+
+
+    </table>
+  </div>
+
+  <!-- Speech SDK reference sdk. -->
+  <script src="https://aka.ms/csspeech/jsbrowserpackageraw"></script>
+
+  <!-- Speech SDK USAGE -->
+  <script src="/js/index.js"></script>
+
+</body>
+
+</html>
